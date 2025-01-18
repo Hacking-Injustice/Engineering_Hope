@@ -11,6 +11,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo"><img alt="engineering hope logo"src="assets/engineering_hope.svg"></a>
+            
+            <!-- Hamburger Menu (Hidden on desktop) -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon">&#9776;</span>  <!-- Hamburger icon -->
+            </button>
+            
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#learning">Learning Objectives</a></li>
@@ -84,6 +90,17 @@
         <img alt="banner graphic 2" src="assets/graphic2.svg"/>
     </div>
 
+    <script>
+        // Toggle the navigation menu on mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+    </script>
+
     <footer id="footer">
         <div class="footer-container">
             <!-- Sitemap Section -->
@@ -98,15 +115,22 @@
     
             <!-- Social Media and Contact Section -->
             <div class="footer-contact-links">
-                
-                <p>Contact us at: <a href="mailto:hackinginjustice@gmail.com">hackinginjustice@gmail.com</a></p>
-                <p>
-                    <a href="https://linkedin.com" target="#">LinkedIn</a>
-                    <a href="https://instagram.com" target="#">Instagram</a>
-                    <a href="https://twitter.com" target="#">X</a>
-                    <a href="https://facebook.com" target="#">Facebook</a>
-                    <a href="https://youtube.com" target="#">YouTube</a>
-                </p>
+                <!-- <img alt="footer banner pattern" src="assets/footer_pattern.svg"/> -->
+                <div class="sq-logos">
+                    <img alt="engineering hope sq" src="assets/engineering_hope_SQUARE.svg">
+                    <img alt="hacking injustice sq" src="assets/hacking_injustice_SQUARE.svg">
+                </div> 
+
+                <div class="contact-links" style="display:block;">
+                    <p>Contact us at: <a href="mailto:hackinginjustice@gmail.com">hackinginjustice@gmail.com</a></p>
+                    <p>
+                        <a href="https://linkedin.com" target="#">LinkedIn</a>
+                        <a href="https://instagram.com" target="#">Instagram</a>
+                        <a href="https://twitter.com" target="#">X</a>
+                        <a href="https://facebook.com" target="#">Facebook</a>
+                        <a href="https://youtube.com" target="#">YouTube</a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>

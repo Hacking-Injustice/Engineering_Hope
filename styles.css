@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Anton&family=Archivo+Narrow:wght@400;500&display=swap');
 
-
-/* Define Color Variables */
 :root {
     --primary-color: #F8EFEA;
     --secondary-color: #F8EFEA;
@@ -17,8 +15,13 @@
     --extra-color: #001C5E;
 }
 
-/* Navigation Bar Styling */
+* {
+    box-sizing: border-box;
+}
+
 .navbar {
+    font-family:archivo narrow;
+    text-transform: lowercase;
     background-color: var(--primary-color);
     color: var(--dark-text-color);
     padding: 10px 20px;
@@ -68,6 +71,47 @@
     text-decoration: underline;
 }
 
+.nav-toggle {
+    display: none;  /* Hidden by default */
+    background: none;
+    border: none;
+    
+    cursor: pointer;
+}
+
+/* Hamburger icon styles */
+.nav-toggle .hamburger-icon {
+    font-size: 1.5rem;  /* Larger size */
+    margin-right:-800%;
+    color:var(--dark-text-color)
+}
+
+/* Mobile styles */
+@media (max-width: 500px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-toggle {
+        display: block;  /* Show the hamburger icon */
+    }
+
+    .nav-links.active {
+        display: flex;
+        background-color:var(--primary-color);
+    }
+}
+
 /* General Styles */
 body {
     font-family: open sans, sans-serif;
@@ -76,6 +120,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Container Styling */
@@ -114,12 +159,15 @@ h2 {
     font-size: 1.8em;
     color: var(--highlight-color);
     margin-bottom: 10px;
+    font-family:roboto mono;
+    font-weight:bold;
 }
 
 h3 {
     font-size: 1.2em;
     color: #0DAB72;
     text-align: center;
+    font-family:roboto mono;
 }
 
 /* Button Styling */
@@ -167,6 +215,9 @@ tr:hover {
 
 /* Footer Styling */
 footer {
+    width:-webkit-fill-available !important;
+    font-family:archivo narrow;
+    text-transform: lowercase;
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
@@ -183,11 +234,6 @@ footer {
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-}
-
-.footer-sitemap,
-.footer-contact-links {
-    width: 45%;
 }
 
 .footer-sitemap ul {
@@ -229,4 +275,24 @@ footer {
 
 .graphic img {
     width: -webkit-fill-available;
+}
+
+.sq-logos {
+    display:flex;
+    gap:1rem;
+    float:right;
+}
+.sq-logos img{
+    width:2rem;
+}
+
+.footer-contact-links {
+    display: flex;            /* Enables flexbox layout */
+    flex-direction: column;   /* Stacks the divs vertically */
+    gap: 20px;                /* Optional: adds space between the divs */
+    align-items: flex-start;  /* Ensures left-alignment of all child divs */
+}
+
+.contact-links {
+    width: 100%;              /* Makes sure contact-links take full width */
 }
